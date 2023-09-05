@@ -1,10 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "website/base.html" %}
+{% block content %}
+{% load static %}
 
-</body>
-</html>
+    <section class="main-section">
+        <div class="container">
+            <h2> {{ title }} </h2>
+            <p> By {{ author }} on {{ date_posted }} </p>
+            <p> {{ haiku1 }} </p>
+            <p> {{ haiku2 }} </p>
+            <p> {{ haiku3 }} </p>
+        </div>
+    </section>
+
+    <!-- Image Gallery Section -->
+    <section class="image-gallery">
+        <div class="image-container">
+            <div class="gallery-item">
+                <img src="{% static 'website/images/CB1.jpg' %}" alt="Cherry Blossom 1">
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'website/images/CB2.jpg' %}" alt="Cherry Blossom 2">
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'website/images/CB3.jpg' %}" alt="Cherry Blossom 3">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Website</p>
+    </footer>
+{% endblock content %}
