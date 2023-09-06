@@ -4,7 +4,7 @@
     <section class="blog-post">
         <div class="container">
             <h1>{{ haiku.title }}</h1>
-            <p class="meta">Published on {{ haiku.date_posted }} by {{ haiku.author }}</p>
+            <p class="meta">Published on {{ haiku.date_posted|date:"F d, Y" }} by {{ haiku.author }}</p>
             <p> {{ haiku.haiku1 }} </p>
             <p> {{ haiku.haiku2 }} </p>
             <p> {{ haiku.haiku3 }} </p>

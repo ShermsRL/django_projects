@@ -4,11 +4,11 @@
 
     <section class="main-section">
         <div class="container">
-            <h2> {{ title }} </h2>
-            <p> By {{ author }} on {{ date_posted }} </p>
-            <p> {{ haiku1 }} </p>
-            <p> {{ haiku2 }} </p>
-            <p> {{ haiku3 }} </p>
+            <h2> {{ haikus.title }} </h2>
+            <p> By {{ haikus.author }} on {{ haikus.date_posted }} </p>
+            <p> {{ haikus.haiku1 }} </p>
+            <p> {{ haikus.haiku2 }} </p>
+            <p> {{ haikus.haiku3 }} </p>
         </div>
     </section>
 
@@ -26,8 +26,4 @@
             </div>
         </div>
     </section>
-
-    <footer>
-        <p>&copy; 2023 Your Website</p>
-    </footer>
 {% endblock content %}
