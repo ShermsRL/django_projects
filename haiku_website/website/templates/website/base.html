@@ -28,12 +28,24 @@
             <li><a href="{% url 'website-home' %}">Home</a></li>
             <li><a href="{% url 'website-about' %}">About</a></li>
             <li><a href="{% url 'website-haikus' %}">Haikus</a></li>
-            <li><a href="#">Register</a></li>
-            <li><a href="#">Login</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'users-profile' %}">Profile</a></li>
+            <li><a href="{% url 'users-logout' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'users-register' %}">Register</a></li>
+            <li><a href="{% url 'users-login' %}">Login</a></li>
+            {% endif %}
         </ul>
     </nav>
 
     <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
         {% block content %}{% endblock %}
     </div>
 
